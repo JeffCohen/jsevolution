@@ -48,10 +48,33 @@ $(function() {
     });
   });
 
-  $('#refresh_stocks').on('click', function(event) {
+  $('#refresh_portfolio').on('click', function(event) {
+    event.preventDefault();
+    $('#portfolio tbody').html("");
+    window.portfolio.total = 0.0;
     $.getJSON("https://ucexchange.herokuapp.com/stocks.json", function( stocks ) {
+      for (var i = 0; i < stocks.length; ++i) {
+        if (window.portfolio.symbols.indexOf(stocks[i].symbol) != -1) {
+          window.portfolio.total += parseFloat(stocks[i].rounded_price);
 
-      $('#all_stocks tbody').html("");
+          var tr_element = $("<tr></tr>");
+          var td1 = $('<td data-symbol="' + stocks[i].symbol + '">' + stocks[i].symbol + "</td>");
+          var td2 = $("<td>" + stocks[i].rounded_price + "</td>");
+          var add_button = $('<td><a href="" data-symbol="'+ stocks[i].symbol + '" class="add"><i class="fa fa-lg fa-plus-circle"></i></a></td>');
+          tr_element.append(td1);
+          tr_element.append(td2);
+          tr_element.append(add_button);
+          $('#portfolio tbody').append(tr_element);
+        }
+      }
+      $("#portfolio_value").text("$ " + window.portfolio.total.toFixed(2))
+
+    });
+  });
+
+  $('#refresh_stocks').on('click', function(event) {
+    $('#all_stocks tbody').html("");
+    $.getJSON("https://ucexchange.herokuapp.com/stocks.json", function( stocks ) {
       for (var i = 0; i < stocks.length; ++i) {
         var tr_element = $("<tr></tr>");
         var td1 = $('<td data-symbol="' + stocks[i].symbol + '">' + stocks[i].symbol + "</td>");
