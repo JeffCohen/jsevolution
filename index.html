@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stock Quote</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      h1 { margin-top: 0; padding-top: 0}
+      body { font-size: 19px; }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="page-header">
+        <h1>JavaScript Code Evolution</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5">
+          <p>This project uses a
+            <a href="ucexchange.herokuapp.com">pretend stock exchange web service</a>
+            to demonstrate how to use JavaScript to build a
+            serverless single-page application.
+          </p>
+
+          <p>
+            We start with an implementation in plain, classic JavaScript
+            and slowly modernize the code in order to reveal the motivations
+            behind each framework evolution.
+          </p>
+
+          <p>(By "serverless" we just mean "someone else's server.")</p>
+        </div>
+
+        <div class="col-sm-7 table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr><th>File</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>stock_quote_js_1</td>
+                <td>Simplest possible classic JavaScript.</td>
+              </tr>
+              <tr>
+                <td><a href="stock_quote_jquery_1.html">stock_quote_jquery_1</td>
+                <td>Simplest possible jQuery</td>
+              </tr>
+              <tr>
+                <td>stock_quote_jquery_2</td>
+                <td>DRY modern jQuery</td>
+              </tr>
+              <tr>
+                <td>stock_quote_es6</td>
+                <td>DRY ES6 JavaScript.</td>
+              </tr>
+              <tr>
+                <td>stock_quote_react</td>
+                <td>React.js</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+  </body>
+</html>
