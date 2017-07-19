@@ -93,12 +93,12 @@ function showPrice(symbol, price) {
   $("#price").html("<h1>" + symbol + ": " + price);
 };
 
-function getStockPrice(symbol, displayer) {
+function getStockPrice(symbol) {
   $.getJSON( "https://ucexchange.herokuapp.com/stocks.json", function( stocks ) {
     for (var i = 0; i < stocks.length; ++i) {
       if (stocks[i].symbol === symbol) {
         var h1 = $("<h1>" + stocks[i].symbol + ": " + stocks[i].rounded_price + "</h1>")
-        var add_button = $(' <a href="" data-symbol="'+ stocks[i].symbol + '" class="add"><i class="fa fa-lg fa-plus-circle"></i></a>');
+        var add_button = $('<a href="" data-symbol="'+ stocks[i].symbol + '" class="add"><i class="padleft fa fa-lg fa-plus-circle"></i></a>');
         h1.append(add_button);
         $("#price").html(h1);
       }

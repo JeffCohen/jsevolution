@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Stock Quote</title>
+    <title>MyTrade</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -11,20 +11,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       h1 { margin-top: 0; padding-top: 0}
+      .padleft { padding-left: 12px;}
     </style>
   </head>
   <body>
 
     <div class="container">
       <div class="page-header">
-        <h1>Stock Quote</h1>
+        <h1>MyTrade</h1>
       </div>
 
       <div class="row">
 
         <div class="col-sm-4">
           <form id="quote">
-            <input type="text" name="symbol">
+            <input type="text" name="symbol" placeholder="AAPL, IBM, ...">
             <button type="submit" class="btn btn-success">Get Quote</button>
           </form>
         </div>
@@ -34,11 +35,12 @@
         </div>
 
       </div>
+      <hr>
       <div class="table-responsive row">
         <div class="col-sm-4">
 
           <h4>All Stocks
-            <small><a id="refresh_stocks" class="pull-right btn btn-sm btn-default">Refresh</a></small>
+            <small><a id="refresh_stocks" class="pull-right btn btn-sm btn-primary">Reload</a></small>
           </h4>
           <table class="table table-striped" id="all_stocks">
             <thead><tr><th>Symbol</th><th>Price</th><th></th></tr></thead>
@@ -48,8 +50,8 @@
           </table>
         </div>
         <div class="col-sm-4 col-sm-offset-4">
-          <h4>Your Portfolio: <span id="portfolio_value" class="text-success"></span>
-            <small><a id="refresh_portfolio" class="pull-right btn btn-sm btn-default">Refresh</a></small>
+          <h4>Your Watch List: <span id="portfolio_value" class="text-success"></span>
+            <small><a id="refresh_portfolio" class="pull-right btn btn-sm btn-primary">Refresh</a></small>
           </h4>
           <table class="table table-striped" id="portfolio">
             <thead><tr><th>Symbol</th><th>Price</th><th></th></tr></thead>
